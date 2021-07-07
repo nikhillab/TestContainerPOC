@@ -2,8 +2,6 @@ package com.testcontainer.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Optional;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -48,10 +46,10 @@ class BookRepoRedisTest {
 
 	@Test
 	void read_book() {
-//		save();
-//		Book book = redisTemplate.opsForValue().get("Book1");
-//
-//		assertThat(book.getId()).isEqualTo(1);
+		save();
+		Book book = redisTemplate.opsForValue().get("Book1");
+
+		assertThat(book.getTitle()).isEqualTo("My Java book");
 	}
 
 	void save() {
